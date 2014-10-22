@@ -29,12 +29,13 @@ module Spree
         # Costs table
         costs = costs_string_to_hash(clean_costs_string)
 
-        # weight based on total cart weight
+        # Weight based on total cart weight
         weight_class = costs.keys.select { |w| total_weight <= w }.min || costs.keys.max
 
+        # Price
         base_shipping_cost = costs[weight_class]
 
-        # Cargo por kilo extra
+        # Fee per additional kilo
         upcharge_amount = 0
         if base_shipping_cost and weight_class < total_weight
           upcharge_amount = preferred_upcharge * (total_weight - weight_class)
