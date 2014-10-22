@@ -31,9 +31,9 @@ It's based on the total weight of the package.
 You simply specify a table with `weight`:`price` in the textarea like this:
 
 ```
-5:10
+5.0:10
 10.5:15
-100:50.5
+100.0:50.5
 ```
 
 This means:
