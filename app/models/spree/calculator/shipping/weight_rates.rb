@@ -4,6 +4,8 @@ module Spree
       preference :costs_string, :text, default: "1:5\n2:7\n5:10\n10:15\n100:50"
       preference :default_weight, :decimal, default: 1
       preference :upcharge, :decimal, default: 0
+      preference :upcharge, :decimal, default: 0
+      preference :only_integers, :boolean, default: true
 
       def self.description
         Spree.t(:weight_rates)
@@ -38,7 +40,13 @@ module Spree
         # Fee per additional kilo
         upcharge_amount = 0
         if base_shipping_cost and weight_class < total_weight
-          upcharge_amount = preferred_upcharge * (total_weight - weight_class)
+          # Extra weight to be charged over shipment price
+          extra_weight = (total_weight - weight_class)
+
+          # Weight rounded for not using fractions of them
+          extra_weight = extra_weight.ceil if preferred_only_integers
+
+          upcharge_amount = preferred_upcharge * extra_weight
         end
 
         return base_shipping_cost + upcharge_amount
