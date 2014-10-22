@@ -15,6 +15,10 @@ module SpreeWeightRates
       end
     end
 
+    initializer 'spree.register.calculators.simple_weight', after: 'spree.register.calculators' do |app|
+      app.config.spree.calculators.shipping_methods << Spree::Calculator::Shipping::WeightRates
+    end
+
     config.to_prepare &method(:activate).to_proc
   end
 end
