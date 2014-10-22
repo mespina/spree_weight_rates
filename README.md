@@ -3,6 +3,8 @@ SpreeWeightRates
 
 Spree extension which supports sales weight based pricing.
 
+Inspired by [https://github.com/freego/spree_simple_weight_calculator](https://github.com/freego/spree_simple_weight_calculator)
+
 Installation
 ------------
 
