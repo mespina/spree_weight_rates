@@ -4,7 +4,6 @@ module Spree
       preference :costs_string, :text, default: "1:5\n2:7\n5:10\n10:15\n100:50"
       preference :default_weight, :decimal, default: 1
       preference :upcharge, :decimal, default: 0
-      preference :upcharge, :decimal, default: 0
       preference :only_integers, :boolean, default: true
 
       def self.description

@@ -25,16 +25,29 @@ bundle exec rails g spree_weight_rates:install
 Usage
 -----
 
-### WeightRates Calculator
+The new WeightRates calculator available it's based on the total weight of the package.
 
-It's based on the total weight of the package.
-You simply specify a table with `weight`:`price` in the textarea like this:
+All configurations are described below:
+
+Preference          | Type   | Description                                                                   | Default
+------------------- | ------ | ----------------------------------------------------------------------------- | :--------------------------------:
+costs_string        | Text   | Cost matrix by weight ranges                                                  | 1:5\n2:7\n5:10\n10:15\n100:50
+default_weight      | Float  | Default weight for product without an preset value                            | 1 (1kg)
+upcharge            | Float  | Extra cost per kilo of weight exceeds the maximum value set in `costs_string` | 0
+only_integers       | Boolan | if set to true, the decimal figures are rounded to the upper whole            | true
+
+
+### costs_string format
+
+You simply specify a table with `weight` and `price` splitted by `:` in the textarea, like this:
 
 ```
 5.0:10
 10.5:15
 100.0:50.5
 ```
+
+Each new row define a new range of values.
 
 This means:
 
