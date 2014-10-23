@@ -30,11 +30,11 @@ The new WeightRates calculator available it's based on the total weight of the p
 All configurations are described below:
 
 Preference          | Type   | Description                                                                   | Default
-------------------- | ------ | ----------------------------------------------------------------------------- | :--------------------------------:
+------------------- | ------ | ----------------------------------------------------------------------------- | :---------------------------:
 costs_string        | Text   | Cost matrix by weight ranges                                                  | 1:5\n2:7\n5:10\n10:15\n100:50
 default_weight      | Float  | Default weight for product without an preset value                            | 1 (1kg)
 upcharge            | Float  | Extra cost per kilo of weight exceeds the maximum value set in `costs_string` | 0
-only_integers       | Boolan | if set to true, the decimal figures are rounded to the upper whole            | true
+only_integers       | Boolan | if set to true, the decimal figures are rounded to the upper integer          | true
 
 
 ### costs_string format
