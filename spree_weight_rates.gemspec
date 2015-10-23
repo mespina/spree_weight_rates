@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_weight_rates'
-  s.version     = '2.3.1'
+  s.version     = '3.0.0'
   s.summary     = 'Spree extension which supports sales weight based pricing'
   s.description = 'Spree extension which supports sales weight based pricing'
   s.required_ruby_version = '>= 1.9.3'
